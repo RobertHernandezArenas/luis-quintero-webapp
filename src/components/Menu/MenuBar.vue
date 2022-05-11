@@ -1,6 +1,7 @@
 <template>
 	<nav class="menu">
-		<!-- LOGO -->
+		<div class="menu__margin">
+			<!-- LOGO -->
 		<div class="menu-container-logo">
 			<img
 				class="menu-container-logo__image"
@@ -58,6 +59,7 @@
 				</ul>
 			</div>
 		</ul>
+		</div>
 	</nav>
 </template>
 
@@ -98,7 +100,7 @@ const socialLogos = ref([
 
 const navigation = ref([
 	{ name: "Home", href: "#" },
-	{ name: "About me", href: "http://172.21.2.38:8080/" },
+	{ name: "About me", href: "#" },
 	{ name: "Hightlights", href: "#" },
 	{ name: "Gallery", href: "#" },
 	{ name: "Contact", href: "#" },
@@ -106,6 +108,9 @@ const navigation = ref([
 
 const hasTitle = () => (logo.value.name.length > 0 ? true : false);
 const hasSlogan = () => (logo.value.slogan.length > 0 ? true : false);
+const clickClose = () => {
+	
+}
 
 const menuFX = () => {
 	let menuList = document.querySelector(".menu__list");
@@ -135,10 +140,16 @@ const menuFX = () => {
 }
 .menu {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	background-color: black;
-	padding: 16px 24px;
+	padding: 16px 0;
 	max-height: 72px;
+}
+
+.menu__margin {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
 }
 
 .menu-container-logo {
@@ -214,9 +225,10 @@ const menuFX = () => {
 /* :::::::::: LINKS :::::::::: */
 .menu__list {
 	align-items: center;
-	background: url('./images/stadium-green2.jpeg');
-	background-position: center;
-	background-size: cover;
+	background: url('./images/luis-desafiante.png'), url('./images/stadium-green2.jpeg');
+	background-position: -75px, center;
+	background-size: contain, cover;
+	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
@@ -229,14 +241,14 @@ const menuFX = () => {
 	right: 0;
 	bottom: 0;
 	transform: translateX(-100%);
-	transition: opacity 0.65s ease-in-out;
+	transition: all 0.35s ease-in-out;
 	width: 100vw;
 	z-index: 99;
 }
 .menu__show {
 	opacity: 1;
-	transform: translateY(0%);
-	transition: opacity 0.35s ease-in-out;
+	transform: translateX(0%);
+	transition: all 0.25s ease-in-out;
 }
 .menu__list--item {
 	display: inline-block;
@@ -325,20 +337,17 @@ const menuFX = () => {
 
 /*//////// MEDIA QUERIES ///////*/
 @media only screen and (min-width: 1024px) {
-
-.menu-container-logo__slogan {
-	display: none;
-}
-
 .menu__burger {
 	display: none;
 }
 	.menu__list {
-	background: black;
+    background: black;
     position: unset;
     transform: unset;
     opacity: 1;
-	width: auto;
+    width: auto;
+    gap: 80px;
+    justify-content: flex-end;
     flex-direction: row;
 }
 
@@ -356,11 +365,10 @@ const menuFX = () => {
 	text-decoration: none;
 	font-weight: normal;
 	font-size: 16px;
-	text-transform: uppercase;
+	text-transform: none;
 }
 
 .progress-bar-fx:after {
 	position: unset;}
-
 }
 </style>
