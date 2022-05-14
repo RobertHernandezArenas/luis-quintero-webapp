@@ -31,7 +31,7 @@
 		</div>
 
 		<!-- LINKS -->
-		<ul class="menu__list">
+		<ul @click="clickClose" class="menu__list">
 			<li
 				v-for="linky in navigation"
 				:key="linky.id"
@@ -99,17 +99,24 @@ const socialLogos = ref([
 ]);
 
 const navigation = ref([
-	{ name: "Home", href: "#" },
-	{ name: "About me", href: "#" },
-	{ name: "Hightlights", href: "#" },
-	{ name: "Gallery", href: "#" },
-	{ name: "Contact", href: "#" },
+	{ name: "Home", href: "#Home" },
+	{ name: "About me", href: "#AboutMe" },
+	{ name: "Hightlights", href: "#Hightlights" },
+	{ name: "Gallery", href: "#Gallery" },
+	{ name: "Contact", href: "#Contact" },
 ]);
 
 const hasTitle = () => (logo.value.name.length > 0 ? true : false);
 const hasSlogan = () => (logo.value.slogan.length > 0 ? true : false);
 const clickClose = () => {
-	
+	let menuList = document.querySelector(".menu__list");
+	let bar1 = document.querySelector(".menu__bar:first-child");
+	let bar2 = document.querySelector(".menu__bar:nth-child(2)");
+	let bar3 = document.querySelector(".menu__bar:last-child");
+	menuList.classList.remove("menu__show")
+	bar1.classList.toggle("menu__bar1");
+	bar2.classList.toggle("menu__bar2");
+	bar3.classList.toggle("menu__bar3");
 }
 
 const menuFX = () => {
@@ -120,12 +127,12 @@ const menuFX = () => {
 	let bar1 = document.querySelector(".menu__bar:first-child");
 	let bar2 = document.querySelector(".menu__bar:nth-child(2)");
 	let bar3 = document.querySelector(".menu__bar:last-child");
-
 	mobileMenuIsOpen
 		? true
 		: barsBurger.forEach(bar => {
 				bar.style.backgroundColor = "white";
-		  });burger.classList.toggle("superpos")
+		  });
+	burger.classList.toggle("superpos")
 	bar1.classList.toggle("menu__bar1");
 	bar2.classList.toggle("menu__bar2");
 	bar3.classList.toggle("menu__bar3");
@@ -188,7 +195,7 @@ const menuFX = () => {
 .menu__burger {
 	width: 40px;
 	border-radius: 2px;
-	background-color: black;
+	background: transparent;
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
@@ -240,15 +247,15 @@ const menuFX = () => {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	transform: translateX(-100%);
-	transition: all 0.35s ease-in-out;
+	transform: translate(-100vw, 0);
+	transition: opacity 0.35s ease-in-out;
 	width: 100vw;
 	z-index: 99;
 }
-.menu__show {
+.menu__list.menu__show {
 	opacity: 1;
-	transform: translateX(0%);
-	transition: all 0.25s ease-in-out;
+	transform: translateX(0vw);
+	transition: transform  0.5s ease-in-out;
 }
 .menu__list--item {
 	display: inline-block;
@@ -341,6 +348,7 @@ const menuFX = () => {
 	display: none;
 }
 	.menu__list {
+	pointer-events: none;
     background: black;
     position: unset;
     transform: unset;
