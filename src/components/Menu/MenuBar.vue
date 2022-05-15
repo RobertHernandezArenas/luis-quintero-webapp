@@ -3,11 +3,12 @@
 		<div class="menu__margin">
 			<!-- LOGO -->
 		<div class="menu-container-logo">
-			<img
+			<a class="menu-container-logo__link" :href="logo.link">
+				<img
 				class="menu-container-logo__image"
 				:src="logo.image"
 				:alt="logo.alternative_text"
-			/>
+			/></a>
 
 			<div class="menu-container-logo__namesite">
 				<a class="menu-container-logo__link" :href="logo.link">
@@ -348,7 +349,6 @@ const menuFX = () => {
 	display: none;
 }
 	.menu__list {
-	pointer-events: none;
     background: black;
     position: unset;
     transform: unset;
@@ -360,7 +360,6 @@ const menuFX = () => {
 }
 
 .menu__list--item {
-	position: unset;
 	height: auto;
 }
 
@@ -375,8 +374,5 @@ const menuFX = () => {
 	font-size: 16px;
 	text-transform: none;
 }
-
-.progress-bar-fx:after {
-	position: unset;}
 }
 </style>
