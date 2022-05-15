@@ -1,0 +1,153 @@
+<template>
+  <div class="accordion">
+		<article v-for="article in articles" :key="article.id" class="accordion__slide">
+			<!-- <img class="accordion__image" src="../assets/lu2.jpg" alt="" />  -->
+			<video
+                :src="article.video"
+				class="accordion__image"
+				autoplay="true"
+				loop
+				muted
+			></video>
+            <a class="accordion__link" :href="article.url">
+                <h3 class="accordion__title">{{article.title}}</h3>
+				<p class="accordion__description">{{article.description}}</p>
+			</a>
+		</article>
+		
+	</div>
+</template>
+
+<script setup>
+import { ref /*reactive, toRefs, reactive, computed*/ } from "vue";
+const articles = ref([
+				{
+					image: "",
+                    video: "./video/nike-shot.mp4",
+					url: "#",
+					title: "Titulo Luisito H3",
+					description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+					dolores voluptates rem ea eaque sunt nulla ut dolorum asperiores
+					aut eius ipsa obcaecati natus, earum error consequatur eum! Vero,
+					totam?`,
+					readMore: "Seguir leyendo ➔",
+				},
+			]);
+
+</script>
+
+<style scoped>
+.accordion {
+	display: flex;
+	background-repeat: no-repeat;
+	gap: 8px;
+	overflow: auto;
+	width: 100vw;
+}
+
+.accordion__slide {
+	min-width: auto;
+}
+
+.accordion__slide:first-child {
+}
+
+.accordion__slide:last-child {
+}
+
+.accordion:hover .accordion__slide {
+}
+
+.accordion .accordion__slide:hover {
+}
+
+.accordion__image {
+	height: 400px;
+	object-fit: cover;
+	width: auto;
+}
+
+.accordion__link {
+	display: block;
+	position: relative;
+	bottom: 100%;
+}
+
+.accordion__title,
+.accordion__description {
+}
+
+.accordion__title {
+}
+
+.accordion__description {
+}
+
+@media only screen and (min-width: 1024px) {
+	.accordion {
+		display: flex;
+		height: 100vh;
+		gap: 16px;
+	}
+
+	.accordion__slide {
+		display: flex;
+		filter: grayscale(75%);
+		flex-direction: column;
+		justify-content: flex-end;
+		object-fit: cover;
+		width: 100%;
+		transition: 0.35s all ease-in-out;
+	}
+
+	.accordion__slide:first-child {
+		width: 160%;
+		filter: grayscale(0%);
+	}
+
+	.accordion:hover .accordion__slide {
+		width: 100%;
+	}
+
+	.accordion .accordion__slide:hover {
+		width: 160%;
+		filter: grayscale(0%);
+		background-image: url("../assets/lu1.jpg");
+		background-size: cover;
+	}
+
+	.accordion__image {
+		position: fixed;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+	.accordion__link {
+		text-decoration: none;
+	}
+
+	.accordion__title,
+	.accordion__description {
+		color: #fff;
+	}
+
+	.accordion__title {
+		font-size: 1.6rem;
+		text-align: left;
+		margin: 1rem 0;
+		font-family: "Inter";
+		font-weight: 600;
+		font-display: swap;
+	}
+
+	.accordion__description {
+		font-size: 14px;
+		max-width: max-content;
+		margin: 0;
+		line-height: 1.5rem;
+		font-family: "Poppins";
+		font-weight: normal;
+	}
+}
+</style>
