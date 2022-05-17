@@ -32,7 +32,7 @@
 		</div>
 
 		<!-- LINKS -->
-		<ul @click="clickClose" class="menu__list">
+		<ul @click.prevent="clickClose" class="menu__list">
 			<li
 				v-for="linky in navigation"
 				:key="linky.id"
@@ -76,7 +76,7 @@ import { ref /*reactive, toRefs, reactive, computed*/ } from "vue";
 const logo = ref({
 	link: "/",
 	image: "./images/logo-w.png",
-	name: "LQ10",
+	name: "",
 	alternative_text: "Logo Luis Quintero",
 	slogan: "",
 });
@@ -109,11 +109,16 @@ const navigation = ref([
 
 const hasTitle = () => (logo.value.name.length > 0 ? true : false);
 const hasSlogan = () => (logo.value.slogan.length > 0 ? true : false);
+
 const clickClose = () => {
 	let menuList = document.querySelector(".menu__list");
 	let bar1 = document.querySelector(".menu__bar:first-child");
 	let bar2 = document.querySelector(".menu__bar:nth-child(2)");
 	let bar3 = document.querySelector(".menu__bar:last-child");
+	let bodi = document.querySelector("body");
+	let burger = document.querySelector(".menu__burger");
+	burger.classList.toggle("superpos")
+	bodi.classList.toggle("notoverflow");
 	menuList.classList.remove("menu__show")
 	bar1.classList.toggle("menu__bar1");
 	bar2.classList.toggle("menu__bar2");
@@ -121,6 +126,7 @@ const clickClose = () => {
 }
 
 const menuFX = () => {
+	let body = document.querySelector("body");
 	let menuList = document.querySelector(".menu__list");
 	let mobileMenuIsOpen = menuList.classList.toggle("menu__show");
 	let burger = document.querySelector(".menu__burger");
@@ -128,23 +134,28 @@ const menuFX = () => {
 	let bar1 = document.querySelector(".menu__bar:first-child");
 	let bar2 = document.querySelector(".menu__bar:nth-child(2)");
 	let bar3 = document.querySelector(".menu__bar:last-child");
-	mobileMenuIsOpen
-		? true
-		: barsBurger.forEach(bar => {
-				bar.style.backgroundColor = "white";
-		  });
-	burger.classList.toggle("superpos")
+	
+	body.classList.toggle("notoverflow");
+	burger.classList.toggle("superpos");
 	bar1.classList.toggle("menu__bar1");
 	bar2.classList.toggle("menu__bar2");
 	bar3.classList.toggle("menu__bar3");
+	
+	
 };
 
 /** ****************************************************************************************** */
 </script>
 
 <style scoped>
+
 .superpos { 
 	z-index: 9999;
+}
+
+.notoverflow {
+	/* overflow-x: hidden;
+	overflow-y: hidden; */
 }
 .menu {
 	display: flex;
@@ -182,7 +193,8 @@ const menuFX = () => {
 }
 .menu-container-logo__title {
 	color: white;
-	font-family: 'Niagara Solid';
+	/* font-family: 'Niagara Solid'; */
+	font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial;
 	font-weight: 300;
 	font-size: 36px;
 	text-align: start;
@@ -215,7 +227,7 @@ const menuFX = () => {
 	border-radius: 8px;
 	background-color: white;
 	margin: 2px;
-	transition: all 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
 	width: 24px;
 }
 .menu__bar1 {
@@ -248,15 +260,17 @@ const menuFX = () => {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	transform: translate(-100vw, 0);
+	transform: translate(-100%, 0);
 	transition: opacity 0.35s ease-in-out;
-	width: 100vw;
+	width: 100%;
+	height: 100vmax;
 	z-index: 99;
+	
 }
 .menu__list.menu__show {
 	opacity: 1;
-	transform: translateX(0vw);
-	transition: transform  0.5s ease-in-out;
+	transform: translate(0%, 0);
+	transition: transform .35s ease;
 }
 .menu__list--item {
 	display: inline-block;
