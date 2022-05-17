@@ -371,6 +371,7 @@ const menuFX = () => {
     gap: 80px;
     justify-content: flex-end;
     flex-direction: row;
+	height: auto;
 }
 
 .menu__list--item {
