@@ -1,153 +1,135 @@
 <template>
-  <div class="accordion">
-		<article v-for="article in articles" :key="article.id" class="accordion__slide">
-			<!-- <img class="accordion__image" src="../assets/lu2.jpg" alt="" />  -->
-			<video
-                :src="article.video"
-				class="accordion__image"
-				autoplay="true"
-				loop
-				muted
-			></video>
-            <a class="accordion__link" :href="article.url">
-                <h3 class="accordion__title">{{article.title}}</h3>
-				<p class="accordion__description">{{article.description}}</p>
-			</a>
-		</article>
-		
-	</div>
+	<div class="container">
+  <div class="panel active" style="background-image:url('./images/lui.jpg');">
+    <h3>CSS Script</h3>
+  </div>
+  <div class="panel" style="background-image:url('./images/lui2.jpg');">
+    <h3>CSS Script</h3>
+  </div>
+  <div class="panel" style="background-image:url('./images/lui1.jpg');">
+    <h3>CSS Script</h3>
+  </div>
+  <div class="panel" style="background-image:url('./images/lui2.jpg');">
+    <h3>CSS Script</h3>
+  </div>
+  <div class="panel" style="background-image:url('./images/lui5.jpg');">
+    <h3>CSS Script</h3>
+  </div>
+ 
+</div>
 </template>
 
 <script setup>
-import { ref /*reactive, toRefs, reactive, computed*/ } from "vue";
+import { ref, onMounted /*reactive, toRefs, reactive,*/, computed } from "vue";
 const articles = ref([
-				{
-					image: "",
-                    video: "./video/nike-shot.mp4",
-					url: "#",
-					title: "Titulo Luisito H3",
-					description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+	
+	{
+		image: "./images/lui1.jpg",
+		url: "#",
+		title: "Titulo Luisito H3",
+		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
 					dolores voluptates rem ea eaque sunt nulla ut dolorum asperiores
 					aut eius ipsa obcaecati natus, earum error consequatur eum! Vero,
 					totam?`,
-					readMore: "Seguir leyendo ➔",
-				},
-			]);
+		readMore: "Seguir leyendo ➔",
+	},
+	{
+		image: "./images/lui.jpg",
+		url: "#",
+		title: "Titulo Luisito H3",
+		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+					dolores voluptates rem ea eaque sunt nulla ut dolorum asperiores
+					aut eius ipsa obcaecati natus, earum error consequatur eum! Vero,
+					totam?`,
+		readMore: "Seguir leyendo ➔",
+	}
+]);
+
+const descriptionLimiter = computed(() => this.description.slice(0, 220) + this.readMore);
+const panels = document.querySelectorAll('.panel');
+panels.forEach((panel) => {
+  panel.addEventListener('click', () => {
+    removeActiveClasses();
+    panel.classList.add('active');
+  });
+});
+function removeActiveClasses() {
+  panels.forEach((panel) => {
+    panel.classList.remove('active');
+  });
+}
+
+const bgCard = (str) => {
+	return `background-image: url(${str})`
+}
+onMounted(() => {
+	bgCard();
+	const panels = document.querySelectorAll('.panel');
+panels.forEach((panel) => {
+  panel.addEventListener('click', () => {
+    removeActiveClasses();
+    panel.classList.add('active');
+  });
+});
+function removeActiveClasses() {
+  panels.forEach((panel) => {
+    panel.classList.remove('active');
+  });
+}
+});
 
 </script>
 
 <style scoped>
-.accordion {
-	display: flex;
-	background-repeat: no-repeat;
-	gap: 8px;
-	overflow: auto;
-	width: 100vw;
+.container
+{
+  display: flex;
+  width: 100vw;
 }
-
-.accordion__slide {
-	min-width: auto;
+.panel
+{
+  position: relative;
+  background-size: cover 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 85vh;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  flex: .5;
+  margin: 10px;
+  transition: all .5s ease-in;
 }
-
-.accordion__slide:first-child {
+.panel h3
+{
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  
 }
-
-.accordion__slide:last-child {
+.panel.active
+{
+  flex: 1;
+  width: 100%;
 }
-
-.accordion:hover .accordion__slide {
+.panel.active h3
+{
+  opacity: 1;
+  transition: opacity .3s ease-in .4s;
 }
-
-.accordion .accordion__slide:hover {
-}
-
-.accordion__image {
-	height: 400px;
-	object-fit: cover;
-	width: auto;
-}
-
-.accordion__link {
-	display: block;
-	position: relative;
-	bottom: 100%;
-}
-
-.accordion__title,
-.accordion__description {
-}
-
-.accordion__title {
-}
-
-.accordion__description {
-}
-
-@media only screen and (min-width: 1024px) {
-	.accordion {
-		display: flex;
-		height: 100vh;
-		gap: 16px;
-	}
-
-	.accordion__slide {
-		display: flex;
-		filter: grayscale(75%);
-		flex-direction: column;
-		justify-content: flex-end;
-		object-fit: cover;
-		width: 100%;
-		transition: 0.35s all ease-in-out;
-	}
-
-	.accordion__slide:first-child {
-		width: 160%;
-		filter: grayscale(0%);
-	}
-
-	.accordion:hover .accordion__slide {
-		width: 100%;
-	}
-
-	.accordion .accordion__slide:hover {
-		width: 160%;
-		filter: grayscale(0%);
-		background-image: url("../assets/lu1.jpg");
-		background-size: cover;
-	}
-
-	.accordion__image {
-		position: fixed;
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-
-	.accordion__link {
-		text-decoration: none;
-	}
-
-	.accordion__title,
-	.accordion__description {
-		color: #fff;
-	}
-
-	.accordion__title {
-		font-size: 1.6rem;
-		text-align: left;
-		margin: 1rem 0;
-		font-family: "Inter";
-		font-weight: 600;
-		font-display: swap;
-	}
-
-	.accordion__description {
-		font-size: 14px;
-		max-width: max-content;
-		margin: 0;
-		line-height: 1.5rem;
-		font-family: "Poppins";
-		font-weight: normal;
-	}
+@media(max-width:480px)
+{
+  .container
+  {
+      width: 100vw;
+  }
+  .panel:nth-last-of-type(6),
+  .panel:nth-last-of-type(7)
+  {
+      display: none;
+  }
 }
 </style>

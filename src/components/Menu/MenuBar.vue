@@ -3,12 +3,11 @@
 		<div class="menu__margin">
 			<!-- LOGO -->
 		<div class="menu-container-logo">
-			<a class="menu-container-logo__link" :href="logo.link">
-				<img
+			<img
 				class="menu-container-logo__image"
 				:src="logo.image"
 				:alt="logo.alternative_text"
-			/></a>
+			/>
 
 			<div class="menu-container-logo__namesite">
 				<a class="menu-container-logo__link" :href="logo.link">
@@ -32,7 +31,7 @@
 		</div>
 
 		<!-- LINKS -->
-		<ul @click.prevent="clickClose" class="menu__list">
+		<ul @click="clickClose" class="menu__list">
 			<li
 				v-for="linky in navigation"
 				:key="linky.id"
@@ -71,16 +70,14 @@ import { ref /*reactive, toRefs, reactive, computed*/ } from "vue";
 // que va aa ser reactivo a todos sus niveles , es decir que va a mutar y se modificara el mismo objeto ,
 // para solucionar esto se debe hacer una copia del objeto y para hacer destructuring es recomendable usar [TOREFS(obj)]
 // esto no pasa con [REF]
-
 // Para acceder a los valores de [REF] tengo que usar su propiedad value [REF].value
 const logo = ref({
 	link: "/",
-	image: "./images/logo-w.png",
+	image: "./images/logo-lq1.png",
 	name: "",
 	alternative_text: "Logo Luis Quintero",
 	slogan: "",
 });
-
 const socialLogos = ref([
 	{
 		name: "facebook",
@@ -98,35 +95,26 @@ const socialLogos = ref([
 		link: "#",
 	},
 ]);
-
 const navigation = ref([
-	{ name: "Home", href: "#Home" },
-	{ name: "About me", href: "#AboutMe" },
-	{ name: "Hightlights", href: "#Hightlights" },
-	{ name: "Gallery", href: "#Gallery" },
-	{ name: "Contact", href: "#Contact" },
+	{ name: "HOME", href: "#Home" },
+	{ name: "ABOUT ME", href: "#AboutMe" },
+	{ name: "HIGHTLIGHTS", href: "#Hightlights" },
+	{ name: "GALLERY", href: "#Gallery" },
+	{ name: "CONTACT", href: "#Contact" },
 ]);
-
 const hasTitle = () => (logo.value.name.length > 0 ? true : false);
 const hasSlogan = () => (logo.value.slogan.length > 0 ? true : false);
-
 const clickClose = () => {
 	let menuList = document.querySelector(".menu__list");
 	let bar1 = document.querySelector(".menu__bar:first-child");
 	let bar2 = document.querySelector(".menu__bar:nth-child(2)");
 	let bar3 = document.querySelector(".menu__bar:last-child");
-	let bodi = document.querySelector("body");
-	let burger = document.querySelector(".menu__burger");
-	burger.classList.toggle("superpos")
-	bodi.classList.toggle("notoverflow");
 	menuList.classList.remove("menu__show")
 	bar1.classList.toggle("menu__bar1");
 	bar2.classList.toggle("menu__bar2");
 	bar3.classList.toggle("menu__bar3");
 }
-
 const menuFX = () => {
-	let body = document.querySelector("body");
 	let menuList = document.querySelector(".menu__list");
 	let mobileMenuIsOpen = menuList.classList.toggle("menu__show");
 	let burger = document.querySelector(".menu__burger");
@@ -134,28 +122,22 @@ const menuFX = () => {
 	let bar1 = document.querySelector(".menu__bar:first-child");
 	let bar2 = document.querySelector(".menu__bar:nth-child(2)");
 	let bar3 = document.querySelector(".menu__bar:last-child");
-	
-	body.classList.toggle("notoverflow");
-	burger.classList.toggle("superpos");
+	mobileMenuIsOpen
+		? true
+		: barsBurger.forEach(bar => {
+				bar.style.backgroundColor = "white";
+		  });
+	burger.classList.toggle("superpos")
 	bar1.classList.toggle("menu__bar1");
 	bar2.classList.toggle("menu__bar2");
 	bar3.classList.toggle("menu__bar3");
-	
-	
 };
-
 /** ****************************************************************************************** */
 </script>
 
 <style scoped>
-
 .superpos { 
 	z-index: 9999;
-}
-
-.notoverflow {
-	/* overflow-x: hidden;
-	overflow-y: hidden; */
 }
 .menu {
 	display: flex;
@@ -164,13 +146,11 @@ const menuFX = () => {
 	padding: 16px 0;
 	max-height: 72px;
 }
-
 .menu__margin {
 	display: flex;
 	justify-content: space-between;
-	width: 80%;
+	width: 90%;
 }
-
 .menu-container-logo {
 	display: flex;
 	gap: 16px;
@@ -182,7 +162,7 @@ const menuFX = () => {
 .menu-container-logo__image {
 	cursor: pointer;
 	object-fit: scale-down;
-	width: 32px;
+	height: 42px;
 }
 .menu-container-logo__link {
 }
@@ -193,17 +173,16 @@ const menuFX = () => {
 }
 .menu-container-logo__title {
 	color: white;
-	/* font-family: 'Niagara Solid'; */
-	font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial;
 	font-weight: 300;
-	font-size: 36px;
+	font-size: 16px;
 	text-align: start;
+	font-family: "Madinah Authentic", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial;
+	letter-spacing: 2px;
 }
 .menu-container-logo__slogan {
 	color: white;
 	font-size: 14px;
 }
-
 /* :::::::::: BURGER BUTTON :::::::::: */
 .menu__burger {
 	width: 40px;
@@ -227,7 +206,7 @@ const menuFX = () => {
 	border-radius: 8px;
 	background-color: white;
 	margin: 2px;
-	transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition: all 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
 	width: 24px;
 }
 .menu__bar1 {
@@ -241,7 +220,6 @@ const menuFX = () => {
 	background-color: yellow;
 	transform: translateY(-6px) rotate(-45deg);
 }
-
 /* :::::::::: LINKS :::::::::: */
 .menu__list {
 	align-items: center;
@@ -260,17 +238,15 @@ const menuFX = () => {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	transform: translate(-100%, 0);
+	transform: translate(-100vw, 0);
 	transition: opacity 0.35s ease-in-out;
-	width: 100%;
-	height: 100vmax;
+	width: 100vw;
 	z-index: 99;
-	
 }
 .menu__list.menu__show {
 	opacity: 1;
-	transform: translate(0%, 0);
-	transition: transform .35s ease;
+	transform: translateX(0vw);
+	transition: transform  0.5s ease-in-out;
 }
 .menu__list--item {
 	display: inline-block;
@@ -288,7 +264,6 @@ const menuFX = () => {
 	font-size: 24px;
 	text-transform: uppercase;
 }
-
 /* :::::::::: PROGRESS BAR HOVER :::::::::: */
 .progress-bar-fx:after {
 	position: absolute;
@@ -306,7 +281,6 @@ const menuFX = () => {
 	width: 100%;
 }
 /* :::::::::: SOCIAL LINKS ICON :::::::::: */
-
 .menu__list-social--container {
 	position: relative;
 	display: flex;
@@ -348,21 +322,19 @@ const menuFX = () => {
 	filter: invert(49%) sepia(44%) saturate(7496%) hue-rotate(218deg)
 		brightness(91%) contrast(92%);
 }
-
 .menu__list-social--icon[alt="instagram"]:hover {
 }
 .menu__list-social--icon[alt="youtube"]:hover {
 	filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg)
 		saturate(1600%) contrast(1);
 }
-
-
 /*//////// MEDIA QUERIES ///////*/
 @media only screen and (min-width: 1024px) {
 .menu__burger {
 	display: none;
 }
 	.menu__list {
+	/* pointer-events: none; */
     background: black;
     position: unset;
     transform: unset;
@@ -371,17 +343,14 @@ const menuFX = () => {
     gap: 80px;
     justify-content: flex-end;
     flex-direction: row;
-	height: auto;
 }
-
 .menu__list--item {
+	position: unset;
 	height: auto;
 }
-
 .menu__list-social--container {
 	display: none;
 }
-
 .menu__list--link {
 	color: white;
 	text-decoration: none;
@@ -389,5 +358,7 @@ const menuFX = () => {
 	font-size: 16px;
 	text-transform: none;
 }
+.progress-bar-fx:after {
+	position: unset;}
 }
 </style>
