@@ -31,7 +31,7 @@
 		</div>
 
 		<!-- LINKS -->
-		<ul class="menu__list">
+		<ul @click="clickClose" class="menu__list">
 			<li
 				v-for="linky in navigation"
 				:key="linky.id"
@@ -104,7 +104,16 @@ const navigation = ref([
 ]);
 const hasTitle = () => (logo.value.name.length > 0 ? true : false);
 const hasSlogan = () => (logo.value.slogan.length > 0 ? true : false);
-
+const clickClose = () => {
+	let menuList = document.querySelector(".menu__list");
+	let bar1 = document.querySelector(".menu__bar:first-child");
+	let bar2 = document.querySelector(".menu__bar:nth-child(2)");
+	let bar3 = document.querySelector(".menu__bar:last-child");
+	menuList.classList.remove("menu__show")
+	bar1.classList.toggle("menu__bar1");
+	bar2.classList.toggle("menu__bar2");
+	bar3.classList.toggle("menu__bar3");
+}
 const menuFX = () => {
 	let menuList = document.querySelector(".menu__list");
 	let mobileMenuIsOpen = menuList.classList.toggle("menu__show");
@@ -113,16 +122,13 @@ const menuFX = () => {
 	let bar1 = document.querySelector(".menu__bar:first-child");
 	let bar2 = document.querySelector(".menu__bar:nth-child(2)");
 	let bar3 = document.querySelector(".menu__bar:last-child");
-	let boddy = document.querySelector("body");
 
 	mobileMenuIsOpen
-		? boddy.style.overflow = "hidden"
+		? true
 		: barsBurger.forEach(bar => {
-			bar.style.backgroundColor = "white";
-				boddy.style.overflow = "auto";
+				bar.style.backgroundColor = "white";
 		  });
-	burger.classList.toggle("superpos");
-	
+	burger.classList.toggle("superpos")
 	bar1.classList.toggle("menu__bar1");
 	bar2.classList.toggle("menu__bar2");
 	bar3.classList.toggle("menu__bar3");
@@ -131,20 +137,9 @@ const menuFX = () => {
 </script>
 
 <style scoped>
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: yellow;
-}
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
 .superpos { 
 	z-index: 9999;
 }
-
 .menu {
 	display: flex;
 	justify-content: center;
@@ -198,21 +193,21 @@ const menuFX = () => {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: all 0.25s ease;
+	transition: all 0.6s ease;
 }
 .menu__burger--strip {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: all 0.3s ease;
+	transition: all 0.7s ease;
 }
 .menu__strip .menu__bar {
 	height: 4px;
 	border-radius: 8px;
 	background-color: white;
 	margin: 2px;
-	transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition: all 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
 	width: 24px;
 }
 .menu__bar1 {
@@ -230,7 +225,7 @@ const menuFX = () => {
 .menu__list {
 	align-items: center;
 	background: url('./images/luis-desafiante.png'), url('./images/stadium-green2.jpeg');
-	background-position: -50px, center;
+	background-position: -75px, center;
 	background-size: contain, cover;
 	background-repeat: no-repeat;
 	display: flex;
@@ -240,19 +235,20 @@ const menuFX = () => {
 	list-style: none;
 	opacity: 0;
 	position: absolute;
-	left: 0;
 	top: 0;
-	height: 100vh;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	transform: translate(-100vw, 0);
-	transition: opacity 0.25s ease-in-out;
-	width: 100vw;
+	transition: opacity 0.35s ease-in-out;
+	width: 100vmin;
 	z-index: 99;
 	overflow: hidden;
 }
 .menu__list.menu__show {
 	opacity: 1;
 	transform: translateX(0vw);
-	transition: opacity  0.25s ease-in-out;
+	transition: transform  0.5s ease-in-out;
 }
 .menu__list--item {
 	display: inline-block;
@@ -281,7 +277,7 @@ const menuFX = () => {
 	background-color: yellow;
 	display: block;
 	content: "";
-	transition: width 0.35s ease-in-out;
+	transition: width 0.45s ease-in-out;
 }
 .progress-bar-fx:hover:after {
 	width: 100%;
@@ -322,7 +318,7 @@ const menuFX = () => {
 .menu__list-social--icon[alt="instagram"]:hover,
 .menu__list-social--icon[alt="youtube"]:hover {
 	transform: scale(1.15, 1.15);
-	transition: transform 0.25s ease-in;
+	transition: transform 0.35s ease-in;
 }
 .menu__list-social--icon[alt="facebook"]:hover {
 	filter: invert(49%) sepia(44%) saturate(7496%) hue-rotate(218deg)
@@ -349,8 +345,6 @@ const menuFX = () => {
     gap: 80px;
     justify-content: flex-end;
     flex-direction: row;
-	    width: auto;
-    height: auto;
 }
 .menu__list--item {
 	position: unset;

@@ -1,16 +1,14 @@
 <template>
 	<div class="nike">
 
-		<video class="nike__video" playsinline autoplay loop muted>
-			<source src="videos/nike-shot.mp4" type="video/mp4" />
+		<video class="nike__video" preload playsinline autoplay loop muted>
+			<source :src="nike.video" type="video/mp4" />
 		</video>
 
 		<div class="nike__story-box">
-			<h2 class="nike__title">JUST DO IT</h2>
+			<h2 class="nike__title">{{ nike.title }}</h2>
 			<p class="nike__content">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente ut quae architecto quam animi?
-				Nesciunt odio nihil accusamus temporibus! Vel nulla ducimus vitae ea fugit rem totam voluptatem odit
-				atque!
+				{{ nike.content }}
 			</p>
 		</div>
 
@@ -18,6 +16,13 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
+const nike = ref({
+	title: "JUST DO IT",
+	content: "Nike inspira a atletas de todo el mundo ofreciéndoles productos, experiencias y servicios innovadores",
+	video: "videos/nike-shot.mp4"
+})
 
 </script>
 
@@ -35,25 +40,26 @@
 .nike__story-box {
 	margin: 0 auto;
 	padding: 2rem 0;
+	width: 90%;
 }
 
 .nike__title {
-	font-size: 42px;
+	font-size: 24px;
+	line-height: 32px;
 	text-align: center;
-	font-weight: 900;
+	font-weight: 500;
+	font-family: 'Futura';
 }
 
 .nike__content {
-	padding: .5rem .25rem;
-	max-width: 90%;
-	text-align: inherit;
-    margin: 0 auto;
+	padding: 16px 0;
+	max-width: 100%;
+	font-size: 14px;
+	line-height: 19px;
+	font-family: 'Helvetica';
 }
 
-@media only screen and (min-width: 768px) {
-
-	
-}
+@media only screen and (min-width: 768px) {}
 
 @media only screen and (min-width: 1024px) {
 
@@ -65,15 +71,13 @@
 	}
 
 	.nike__video {
-		flex: 1;
-		max-width: 450px;
+		max-width: 612px;
 		margin: 0;
 	}
 
 	.nike__story-box {
-		flex: 1;
 		margin: auto 0;
-		max-width: 672px;
+		max-width: 612px;
 	}
 }
 
@@ -81,6 +85,7 @@
 
 	.nike__video {
 		max-width: 550px;
+		padding: 0 2rem;
 	}
 }
 
@@ -88,11 +93,11 @@
 
 	.nike__video {
 		max-width: 750px;
-		
+
 	}
-	.nike__story-box{
+
+	.nike__story-box {
 		padding: 0;
-		flex: 2;
 	}
 }
 </style>

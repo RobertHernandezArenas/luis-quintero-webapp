@@ -1,7 +1,7 @@
 <template>
 <!-- <AccordionGallery  /> -->
-	<!-- <div class="accordion">
-		<article v-for="article in articles" :key="article.id" class="accordion__image-bg"
+	<div class="accordion">
+		<article v-for="article in articles" :key="article.id" class="accordion__slide"
 			:style="bgCard(article.image)">
 			<div class="accordion__content">
 				<h2 class="accordion__title">
@@ -12,7 +12,7 @@
 				</p>
 			</div>
 		</article>
-	</div> -->
+	</div>
 </template>
 
 <script setup>
@@ -75,22 +75,17 @@ onMounted(() => {
 <style>
 
 .accordion {
-	display: flex;
-	overflow-x: hidden;
-	height: 80vh;
+	
 }
 
-.accordion__image-bg {
-	display: flex;
-	justify-content: flex-end;
-	background-size: cover;
-	background-repeat: no-repeat;
+.accordion__slide {
+	
 }
 
 .accordion__content {
-	background: rgb(0, 0, 0);
+	/* background: rgb(0, 0, 0);
 	background: linear-gradient(0deg, rgba(0, 0, 0, 1) 30%, rgba(9, 9, 121, 0)60%, rgba(0, 0, 0, 0) 100%);
-	padding: 1rem;
+	padding: 1rem; */
 }
 
 .accordion__title {
