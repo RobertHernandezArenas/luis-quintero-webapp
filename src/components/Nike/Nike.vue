@@ -65,9 +65,10 @@ const nike = ref({
 
 	.nike {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		padding: 2rem 0;
-		width: 100vw;
+		width: 90vw;
+		margin: 0 auto;
 	}
 
 	.nike__video {
@@ -84,15 +85,15 @@ const nike = ref({
 @media only screen and (min-width: 1200px) {
 
 	.nike__video {
-		max-width: 550px;
-		padding: 0 2rem;
+		max-width: 750px;
+		
 	}
 }
 
 @media only screen and (min-width: 1344px) {
 
 	.nike__video {
-		max-width: 750px;
+		max-width: 900px;
 
 	}
 

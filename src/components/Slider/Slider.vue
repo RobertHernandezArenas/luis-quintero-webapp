@@ -1,98 +1,115 @@
 <template>
-<!-- <AccordionGallery  /> -->
-	<div class="accordion">
-		<article v-for="article in articles" :key="article.id" class="accordion__slide"
-			:style="bgCard(article.image)">
-			<div class="accordion__content">
-				<h2 class="accordion__title">
-					{{ article.title }}
-				</h2>
-				<p class="accordion__description">
-					{{ article.text }}
-				</p>
-			</div>
-		</article>
-	</div>
+  <div class="container-slider">
+    <div class="slider" id="slider">
+      <div v-for="slide in slides" :key="slide.id" class="slider__section">
+        <img :src="slide.image" alt="image" class="slider__img" />
+        <a href="" class="slider__link">
+            <h2 class="slider__title">{{slide.title}}</h2>
+            <p class="slider__description">
+                {{slide.description}}
+            </p>
+        </a>      
+        </div>
+    <div @click="Next" class="slider__btn slider__btn--right">&#62</div>
+    <div @click="Back" class="slider__btn slider__btn--left">&#60</div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from "vue";
+import { ref } from "vue";
 
-
-const articles = ref([
-
-	{
-		image: './images/lui2.jpg',
-		url: "#",
-		title: "Titulo Luisito H3",
-		text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-					dolores voluptates rem ea eaque sunt nulla ut dolorum asperiores
-					aut eius ipsa obcaecati natus, earum error consequatur eum! Vero,
-					totam?`,
-		readMore: "Seguir leyendo ➔",
-	},
-	{
-		image: './images/lui.jpg',
-		url: "#",
-		title: "Titulo Luisito H3",
-		text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-					dolores voluptates rem ea eaque sunt nulla ut dolorum asperiores
-					aut eius ipsa obcaecati natus, earum error consequatur eum! Vero,
-					totam?`,
-		readMore: "Seguir leyendo ➔",
-	}
-	,{
-		image: './images/lui2.jpg',
-		url: "#",
-		title: "Titulo Luisito H3",
-		text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-					dolores voluptates rem ea eaque sunt nulla ut dolorum asperiores
-					aut eius ipsa obcaecati natus, earum error consequatur eum! Vero,
-					totam?`,
-		readMore: "Seguir leyendo ➔",
-	},
-	{
-		image: './images/lui.jpg',
-		url: "#",
-		title: "Titulo Luisito H3",
-		text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-					dolores voluptates rem ea eaque sunt nulla ut dolorum asperiores
-					aut eius ipsa obcaecati natus, earum error consequatur eum! Vero,
-					totam?`,
-		readMore: "Seguir leyendo ➔",
-	}
+const slides = ref([
+  { image: "/images/slider/silde10.jpg",
+    title: "H2 Title",
+    description: "4uirghfui4hxfui4xhf4y4tl4xjf4oifj4iofj4ilorem 1ioefujiortjihvfurhvurhvtgvhtgvhtgvhgtvthgotuhvtgrojtgriot" },
+  { image: "/images/slider/silde20.jpg",
+    title: "H2 Title",
+    description: "4uirghfui4hxfui4xhf4y4tl4xjf4oifj4iofj4ilorem 1ioefujiortjihvfurhvurhvtgvhtgvhtgvhgtvthgotuhvtgrojtgriot" },
+  { image: "/images/slider/silde30.jpg",
+    title: "H2 Title",
+    description: "4uirghfui4hxfui4xhf4y4tl4xjf4oifj4iofj4ilorem 1ioefujiortjihvfurhvurhvtgvhtgvhtgvhgtvthgotuhvtgrojtgriot" },
+  { image: "/images/slider/silde40.jpg",
+    title: "H2 Title",
+    description: "4uirghfui4hxfui4xhf4y4tl4xjf4oifj4iofj4ilorem 1ioefujiortjihvfurhvurhvtgvhtgvhtgvhgtvthgotuhvtgrojtgriot" },
 ]);
 
-const bgCard = (str) => {
-	return `background-image: url(${str})`
+const Next = () => {
+    let items = slides.value;
+    let item = items.shift();
+    items.push(item);
 }
-onMounted(() => {
-	bgCard();
-});
+
+const Back = () => {
+    let items = slides.value;
+    let item = items.pop();
+    items.splice(0,0, item);
+    console.log(item, items);
+}
 
 </script>
 
-<style>
-
-.accordion {
-	
+<style  scoped>
+.container-slider {
+    width: 90%;
+    max-width: 1024px;
+    min-width: 280px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 3rem;
 }
 
-.accordion__slide {
-	
+.slider {
+    display: flex;
+    width: 100%;
+    gap: 16px;
 }
 
-.accordion__content {
-	/* background: rgb(0, 0, 0);
-	background: linear-gradient(0deg, rgba(0, 0, 0, 1) 30%, rgba(9, 9, 121, 0)60%, rgba(0, 0, 0, 0) 100%);
-	padding: 1rem; */
+.slider__section {
+    width: 100%;
+    position: relative;
 }
 
-.accordion__title {
-	color: white;
+.slider__img {
+    display: flex;
+    width: 100%;min-width: 300px;
 }
 
-.accordion__description {
-	color: white;
+.slider__link {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    bottom:  40px;
 }
+
+.slider__title, .slider__description {
+    margin-left: 1rem;
+    color: white;
+}
+
+.slider__section > .slider__link > .slider__description {
+    max-width: 10px;
+    color: aqua;
+}
+
+.slider__btn {
+    position: absolute;
+    top: 45%;
+    font-size: 4rem;
+    color: black;
+    cursor: pointer;
+}
+
+.slider__btn--right {
+    display: inline;
+    right: 10px;
+}
+
+.slider__btn--left {
+    display: inline;
+    left: 10px;
+}
+
+
 </style>

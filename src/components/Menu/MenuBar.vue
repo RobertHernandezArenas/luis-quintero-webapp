@@ -2,63 +2,66 @@
 	<nav class="menu">
 		<div class="menu__margin">
 			<!-- LOGO -->
-		<div class="menu-container-logo">
-			<img
-				class="menu-container-logo__image"
-				:src="logo.image"
-				:alt="logo.alternative_text"
-			/>
+			<div class="menu-container-logo">
+				<img
+					
+					class="menu-container-logo__image"
+					:src="logo.image"
+					:alt="logo.alternative_text"
+				/>
 
-			<div class="menu-container-logo__namesite">
-				<a class="menu-container-logo__link" :href="logo.link">
-					<h1 v-if="hasTitle()" class="menu-container-logo__title">
-						{{ logo.name }}
-					</h1>
-				</a>
-				<span v-if="hasSlogan()" class="menu-container-logo__slogan">{{
-					logo.slogan
-				}}</span>
+				<div class="menu-container-logo__namesite">
+					<a class="menu-container-logo__link" :href="logo.link">
+						<h1 v-if="hasTitle()" class="menu-container-logo__title">
+							{{ logo.name }}
+						</h1>
+					</a>
+					<span v-if="hasSlogan()" class="menu-container-logo__slogan">{{
+						logo.slogan
+					}}</span>
+				</div>
 			</div>
-		</div>
 
-		<!-- BURGER BUTTON -->
-		<div class="menu__burger" @click.prevent="menuFX">
-			<div class="menu__strip menu__burger--strip">
-				<div class="menu__bar"></div>
-				<div class="menu__bar"></div>
-				<div class="menu__bar"></div>
+			<!-- BURGER BUTTON -->
+			<div class="menu__burger" @click.prevent="menuFX">
+				<div class="menu__strip menu__burger--strip">
+					<div class="menu__bar"></div>
+					<div class="menu__bar"></div>
+					<div class="menu__bar"></div>
+				</div>
 			</div>
-		</div>
 
-		<!-- LINKS -->
-		<ul class="menu__list">
-			<li
-				v-for="linky in navigation"
-				:key="linky.id"
-				class="menu__list--item progress-bar-fx"
-			>
-				<a :href="linky.href" class="menu__list--link">{{ linky.name }}</a>
-			</li>
+			<!-- LINKS -->
+			<ul class="menu__list">
+				<li
+					v-for="linky in navigation"
+					:key="linky.id"
+					class="menu__list--item progress-bar-fx"
+				>
+					<a :href="linky.href" class="menu__list--link">{{
+						linky.name
+					}}</a>
+				</li>
 
-			<!-- SOCIAL ICON LINKS -->
-			<div class="menu__list-social--container">
-				<span class="menu__list-social--title">follow me</span>
-				<ul class="menu__list-social">
-					<li
-						v-for="social in socialLogos"
-						:key="social.id"
-						class="menu__list-social--item"
-					>
-						<a href="#" class="menu__list-social--link">
-							<img
-								class="menu__list-social--icon"
-								:src="social.logo"
-								:alt="social.name"
-						/></a>
-					</li>
-				</ul>
-			</div>
-		</ul>
+				<!-- SOCIAL ICON LINKS -->
+				<div class="menu__list-social--container">
+					<span class="menu__list-social--title">follow me</span>
+					<ul class="menu__list-social">
+						<li
+							v-for="social in socialLogos"
+							:key="social.id"
+							class="menu__list-social--item"
+						>
+							<a href="#" class="menu__list-social--link">
+								<img
+									class="menu__list-social--icon"
+									:src="social.logo"
+									:alt="social.name"
+							/></a>
+						</li>
+					</ul>
+				</div>
+			</ul>
 		</div>
 	</nav>
 </template>
@@ -96,11 +99,11 @@ const socialLogos = ref([
 	},
 ]);
 const navigation = ref([
-	{ name: "HOME", href: "#Home" },
-	{ name: "ABOUT ME", href: "#AboutMe" },
-	{ name: "HIGHTLIGHTS", href: "#Hightlights" },
-	{ name: "GALLERY", href: "#Gallery" },
-	{ name: "CONTACT", href: "#Contact" },
+	{ name: "#LQ10", href: "#home" },
+	{ name: "ABOUT ME", href: "#aboutMe" },
+	{ name: "HIGHTLIGHTS", href: "#hightlights" },
+	{ name: "GALLERY", href: "#gallery" },
+	{ name: "CONTACT", href: "#contact" },
 ]);
 const hasTitle = () => (logo.value.name.length > 0 ? true : false);
 const hasSlogan = () => (logo.value.slogan.length > 0 ? true : false);
@@ -116,13 +119,13 @@ const menuFX = () => {
 	let boddy = document.querySelector("body");
 
 	mobileMenuIsOpen
-		? boddy.style.overflow = "hidden"
+		? (boddy.style.overflow = "hidden")
 		: barsBurger.forEach(bar => {
-			bar.style.backgroundColor = "white";
+				bar.style.backgroundColor = "white";
 				boddy.style.overflow = "auto";
 		  });
 	burger.classList.toggle("superpos");
-	
+
 	bar1.classList.toggle("menu__bar1");
 	bar2.classList.toggle("menu__bar2");
 	bar3.classList.toggle("menu__bar3");
@@ -131,17 +134,16 @@ const menuFX = () => {
 </script>
 
 <style scoped>
-
 ::-webkit-scrollbar {
-    width: 10px;
+	width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: yellow;
+	background: yellow;
 }
 ::-webkit-scrollbar-thumb {
-    background: #888;
+	background: #888;
 }
-.superpos { 
+.superpos {
 	z-index: 9999;
 }
 
@@ -151,6 +153,10 @@ const menuFX = () => {
 	background-color: black;
 	padding: 16px 0;
 	max-height: 72px;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 99;
 }
 .menu__margin {
 	display: flex;
@@ -182,7 +188,8 @@ const menuFX = () => {
 	font-weight: 300;
 	font-size: 16px;
 	text-align: start;
-	font-family: "Madinah Authentic", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial;
+	font-family: "Madinah Authentic", "SF Pro Display", "Segoe UI",
+		"Helvetica Neue", Arial;
 	letter-spacing: 2px;
 }
 .menu-container-logo__slogan {
@@ -229,13 +236,14 @@ const menuFX = () => {
 /* :::::::::: LINKS :::::::::: */
 .menu__list {
 	align-items: center;
-	background: url('./images/luis-desafiante.png'), url('./images/stadium-green2.jpeg');
+	background: url("./images/luis-desafiante.png"),
+		url("./images/stadium-green2.jpeg");
 	background-position: -50px, center;
 	background-size: contain, cover;
 	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
+	gap: 14px;
 	justify-content: center;
 	list-style: none;
 	opacity: 0;
@@ -252,7 +260,7 @@ const menuFX = () => {
 .menu__list.menu__show {
 	opacity: 1;
 	transform: translateX(0vw);
-	transition: opacity  0.25s ease-in-out;
+	transition: opacity 0.25s ease-in-out;
 }
 .menu__list--item {
 	display: inline-block;
@@ -277,7 +285,7 @@ const menuFX = () => {
 	left: 0;
 	top: 100%;
 	width: 0;
-	height: 2px;
+	height: 1px;
 	background-color: yellow;
 	display: block;
 	content: "";
@@ -336,37 +344,38 @@ const menuFX = () => {
 }
 /*//////// MEDIA QUERIES ///////*/
 @media only screen and (min-width: 1024px) {
-.menu__burger {
-	display: none;
-}
+	.menu__burger {
+		display: none;
+	}
 	.menu__list {
-	/* pointer-events: none; */
-    background: black;
-    position: unset;
-    transform: unset;
-    opacity: 1;
-    width: auto;
-    gap: 80px;
-    justify-content: flex-end;
-    flex-direction: row;
-	    width: auto;
-    height: auto;
-}
-.menu__list--item {
-	position: unset;
-	height: auto;
-}
-.menu__list-social--container {
-	display: none;
-}
-.menu__list--link {
-	color: white;
-	text-decoration: none;
-	font-weight: normal;
-	font-size: 16px;
-	text-transform: none;
-}
-.progress-bar-fx:after {
-	position: unset;}
+		/* pointer-events: none; */
+		background: black;
+		position: unset;
+		transform: unset;
+		opacity: 1;
+		width: auto;
+		gap: 80px;
+		justify-content: flex-end;
+		flex-direction: row;
+		width: auto;
+		height: auto;
+	}
+	.menu__list--item {
+		position: unset;
+		height: auto;
+	}
+	.menu__list-social--container {
+		display: none;
+	}
+	.menu__list--link {
+		color: white;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 16px;
+		text-transform: none;
+	}
+	.progress-bar-fx:after {
+		position: unset;
+	}
 }
 </style>
