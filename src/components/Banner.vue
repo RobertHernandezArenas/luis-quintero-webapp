@@ -1,8 +1,8 @@
 <template>
 	<div class="banner">
 		<div class="banner-container">
-			<img src="/images/luisito-villarreal.png" alt="" />
-			<img src="/images/frotamanos-luisito.png" alt="" />
+			<img src="./images/luisito-villarreal.png" alt="" />
+			<img src="./images/frotamanos-luisito.png" alt="" />
 		</div>
 	</div>
 </template>

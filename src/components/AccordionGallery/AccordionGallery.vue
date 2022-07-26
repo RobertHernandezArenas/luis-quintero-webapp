@@ -26,21 +26,21 @@ import { Navigation } from "swiper";
 import BannerMaskVue from "../BannerMask/BannerMask.vue";
 const articles = ref([
 	{
-		image: "/images/luisito.jpg",
+		image: "./images/luisito.jpg",
 		url: "#",
 		title: "¡LISTOS PARA LA NUEVA TEMPORADA!",
 		description: `Luis Quintero jugador canterano del Villarreal C.F pasó en perfectas condiciones el reconocimiento médico que le certifica como jugador en plenas facultades físicas para afrontar la temporada 22-23 en la ciudad de la ceramica.`,
 		readMore: "Seguir leyendo ➔",
 	},
 	{
-		image: "/images/lui5.jpg",
+		image: "./images/lui5.jpg",
 		url: "#",
 		title: "NIKE RENUEVA A LUIS QUINTERO.",
 		description: `La empresa multinacional nº 1 de ropa deportiva, decide renovar a Luis Quintero como su embajador y representante de su marca. `,
 		readMore: "Seguir leyendo ➔",
 	},
 	{
-		image: "/images/slide1.jpg",
+		image: "./images/slide1.jpg",
 		url: "#",
 		title: "Titulo Luisito H3",
 		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
@@ -50,7 +50,7 @@ const articles = ref([
 		readMore: "Seguir leyendo ➔",
 	},
 	{
-		image: "/images/luis37.jpg",
+		image: "./images/luis37.jpg",
 		url: "#",
 		title: "Titulo Luisito H3",
 		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil

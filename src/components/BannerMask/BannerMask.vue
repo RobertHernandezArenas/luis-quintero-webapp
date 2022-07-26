@@ -26,7 +26,7 @@
 
 <script setup>
 import { ref } from "vue";
-const video = ref("/videos/nike-shot.mp4");
+const video = ref("./videos/nike-shot.mp4");
 const socialLogos = ref([
 	{
 		name: "facebook",
@@ -79,7 +79,7 @@ const fx = () => {
 	height: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-image: url("/images/luisbn.jpg");
+	background-image: url("./images/luisbn.jpg");
 	mix-blend-mode: multiply;
 }
 

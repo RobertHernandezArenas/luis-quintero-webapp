@@ -20,16 +20,16 @@
 import { ref } from "vue";
 
 const slides = ref([
-  { image: "/images/slider/silde10.jpg",
+  { image: "./images/slider/silde10.jpg",
     title: "H2 Title",
     description: "4uirghfui4hxfui4xhf4y4tl4xjf4oifj4iofj4ilorem 1ioefujiortjihvfurhvurhvtgvhtgvhtgvhgtvthgotuhvtgrojtgriot" },
-  { image: "/images/slider/silde20.jpg",
+  { image: "./images/slider/silde20.jpg",
     title: "H2 Title",
     description: "4uirghfui4hxfui4xhf4y4tl4xjf4oifj4iofj4ilorem 1ioefujiortjihvfurhvurhvtgvhtgvhtgvhgtvthgotuhvtgrojtgriot" },
-  { image: "/images/slider/silde30.jpg",
+  { image: "./images/slider/silde30.jpg",
     title: "H2 Title",
     description: "4uirghfui4hxfui4xhf4y4tl4xjf4oifj4iofj4ilorem 1ioefujiortjihvfurhvurhvtgvhtgvhtgvhgtvthgotuhvtgrojtgriot" },
-  { image: "/images/slider/silde40.jpg",
+  { image: "./images/slider/silde40.jpg",
     title: "H2 Title",
     description: "4uirghfui4hxfui4xhf4y4tl4xjf4oifj4iofj4ilorem 1ioefujiortjihvfurhvurhvtgvhtgvhtgvhgtvthgotuhvtgrojtgriot" },
 ]);
