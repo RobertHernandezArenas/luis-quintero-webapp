@@ -1,6 +1,6 @@
 <template>
 	<section class="banner-mask">
-		<video :src="video" playsinline loop autoplay muted></video>
+		<!-- <video :src="video" playsinline loop autoplay muted></video> -->
 		<div class="banner-mask__container">
 			<h1 class="banner-mask__title">QUINTERO</h1>
 			<div class="menu__list-social--container">
