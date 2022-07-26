@@ -21,7 +21,7 @@ import { ref } from "vue";
 const nike = ref({
 	title: "JUST DO IT",
 	content: "Nike inspira a atletas de todo el mundo ofreciéndoles productos, experiencias y servicios innovadores",
-	video: "videos/nike-shot.mp4"
+	video: "/videos/nike-shot.mp4"
 })
 
 </script>

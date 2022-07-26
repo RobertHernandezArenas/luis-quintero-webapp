@@ -236,8 +236,8 @@ const menuFX = () => {
 /* :::::::::: LINKS :::::::::: */
 .menu__list {
 	align-items: center;
-	background: url("./images/luis-desafiante.png"),
-		url("./images/stadium-green2.jpeg");
+	background: url("/images/luis-desafiante.png"),
+		url("/images/stadium-green2.jpeg");
 	background-position: -50px, center;
 	background-size: contain, cover;
 	background-repeat: no-repeat;
