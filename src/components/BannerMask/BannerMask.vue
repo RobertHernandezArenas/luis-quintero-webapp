@@ -1,5 +1,5 @@
 <template>
-	<section @load="fx" class="banner-mask">
+	<section class="banner-mask">
 		<video :src="video" playsinline loop autoplay muted></video>
 		<div class="banner-mask__container">
 			<h1 class="banner-mask__title">QUINTERO</h1>
@@ -26,7 +26,7 @@
 
 <script setup>
 import { ref } from "vue";
-const video = ref("./videos/nike-shot.mp4");
+const video = ref("/videos/nike-shot.mp4");
 const socialLogos = ref([
 	{
 		name: "facebook",
