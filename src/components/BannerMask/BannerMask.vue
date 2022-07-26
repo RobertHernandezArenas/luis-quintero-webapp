@@ -1,6 +1,6 @@
 <template>
 	<section @load="fx" class="banner-mask">
-		<video src="videos/nike-shot.mp4" playsinline loop autoplay muted></video>
+		<video :src="video" playsinline loop autoplay muted></video>
 		<div class="banner-mask__container">
 			<h1 class="banner-mask__title">QUINTERO</h1>
 			<div class="menu__list-social--container">
@@ -26,6 +26,7 @@
 
 <script setup>
 import { ref } from "vue";
+const video = ref("./videos/nike-shot.mp4");
 const socialLogos = ref([
 	{
 		name: "facebook",
@@ -51,9 +52,9 @@ const fx = () => {
 
 <style scoped>
 .banner-mask {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin: 0 auto;
 	position: relative;
 	width: 300px;
@@ -76,7 +77,7 @@ const fx = () => {
 	align-items: center;
 	width: 100%;
 	height: 100%;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-position: center;
 	background-image: url("images/luisbn.jpg");
 	mix-blend-mode: multiply;
@@ -101,7 +102,7 @@ const fx = () => {
 	color: white;
 	font-size: 14px;
 	letter-spacing: 0.25rem;
-    cursor: default;
+	cursor: default;
 }
 .menu__list-social {
 	display: flex;
