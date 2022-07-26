@@ -1,16 +1,12 @@
 <template>
 	<MenuBar />
 	<AccordionGallery />
-	<AccordionGallery />
-	<AccordionGallery />
-	<AccordionGallery />
-	<AccordionGallery />
-	<AccordionGallery />
+	<Banner />
 	<div class="progress-bar-container">
 		<div class="progress-bar"></div>
 	</div>
 	<div id="go-up" class="mostrar">
-		<i @click="toGoUp()" class="button-up fa fa-angle-up fa-4x"></i>
+		<i @click="toGoUp" class="button-up fa fa-angle-up fa-4x"></i>
 	</div>
 	<Nike />
 	<Contact />
@@ -23,33 +19,29 @@ import AccordionGallery from "./components/AccordionGallery/AccordionGallery.vue
 import Slider from "./components/Slider/Slider.vue";
 import Nike from "./components/Nike/Nike.vue";
 import Contact from "./components/Contact/Contact.vue";
+import Banner from "./components/Banner.vue"
 
-// Devuelve la cantidad de pixeles que estamos alejads del top
-const getPixels = () =>
+// VARIABLES
+// ScrollTop devuelve la distancia de desplazamiento referente al top
+let distanceToTop = () =>
 	document.documentElement.scrollTop || document.body.scrollTop;
 
 const toGoUp = () => {
-	if (getPixels() > 0) {
-		scrollTo(0, 0);
-	}
+	if (distanceToTop > 0 || distanceToTop != 0) scrollTo(0, 0);
 };
 
 onMounted(() => {
-	let progressBar = document.querySelector(".progress-bar");
-	addEventListener("scroll", () => {
-		let alto =
-			document.documentElement.scrollHeight -
-			document.documentElement.clientHeight;
-		console.log(
-			`ScrollHeight:::> ${
-				document.documentElement.scrollHeight
-			} \n ClientHeight :::> ${
-				document.documentElement.clientHeight
-			} \n GetPixels :::> ${getPixels()}`,
-		);
-		let avanceScroll = (getPixels() / alto) * 100;
-		progressBar.style.width = avanceScroll + "vw";
-	});
+	// let progressBar = document.querySelector(".progress-bar");
+	// addEventListener("scroll", () => {
+	// 	let alto =
+	// 		document.documentElement.scrollHeight -
+	// 		document.documentElement.clientHeight;
+	// 	console.log(
+	// 		`ScrollHeight:::> ${document.documentElement.scrollHeight} \n ClientHeight :::> ${document.documentElement.clientHeight}`,
+	// 	);
+	// 	let avanceScroll = (distanceToTop / alto) * 100;
+	// 	progressBar.style.width = avanceScroll + "vw";
+	// });
 });
 </script>
 
@@ -67,7 +59,7 @@ onMounted(() => {
 	scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 	width: 7px;
 }
 ::-webkit-scrollbar-track {
@@ -75,7 +67,7 @@ onMounted(() => {
 }
 ::-webkit-scrollbar-thumb {
 	background: yellow;
-}
+} */
 
 #app {
 	display: flex;

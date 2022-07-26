@@ -73,11 +73,11 @@ const nike = ref({
 
 	.nike__video {
 		max-width: 612px;
-		margin: 0;
+		margin: auto;
 	}
 
 	.nike__story-box {
-		margin: auto 0;
+		margin: auto;
 		max-width: 612px;
 	}
 }
