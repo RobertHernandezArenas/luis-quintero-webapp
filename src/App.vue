@@ -14,12 +14,12 @@
 
 <script setup>
 import { onMounted, watch } from "vue";
-import MenuBar from "./components/Menu/MenuBar.vue";
-import AccordionGallery from "./components/AccordionGallery/AccordionGallery.vue";
-import Slider from "./components/Slider/Slider.vue";
-import Nike from "./components/Nike/Nike.vue";
-import Contact from "./components/Contact/Contact.vue";
-import Banner from "./components/Banner.vue"
+import MenuBar from "@/components/Menu/MenuBar.vue";
+import AccordionGallery from "@/components/AccordionGallery/AccordionGallery.vue";
+import Slider from "@/components/Slider/Slider.vue";
+import Nike from "@/components/Nike/Nike.vue";
+import Contact from "@/components/Contact/Contact.vue";
+import Banner from "@/components/Banner.vue"
 
 // VARIABLES
 // ScrollTop devuelve la distancia de desplazamiento referente al top
