@@ -26,7 +26,6 @@
 
 <script setup>
 import { ref } from "vue";
-const video = ref("/videos/nike-shot.mp4");
 const socialLogos = ref([
 	{
 		name: "facebook",
