@@ -7,11 +7,11 @@ export default defineConfig({
 	plugins: [vue()],
 	define: {
 		"process.env": {},
-		resolve: {
-			alias: {
-				"@": path.resolve(__dirname, "src"),
-			},
-		},
-		base: "./",
 	},
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "src"),
+		},
+	},
+	base: "./",
 });
