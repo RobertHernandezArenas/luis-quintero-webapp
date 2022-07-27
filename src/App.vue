@@ -1,7 +1,7 @@
 <template>
 	<MenuBar />
 	<AccordionGallery />
-	<Banner />
+	<!-- <Banner /> -->
 	<div class="progress-bar-container">
 		<div class="progress-bar"></div>
 	</div>
