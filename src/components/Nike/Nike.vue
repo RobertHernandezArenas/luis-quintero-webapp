@@ -1,29 +1,42 @@
 <template>
 	<div class="nike">
-
 		<video class="nike__video" preload playsinline autoplay loop muted>
 			<source :src="nike.video" type="video/mp4" />
 		</video>
-
 		<div class="nike__story-box">
 			<h2 class="nike__title">{{ nike.title }}</h2>
 			<p class="nike__content">
 				{{ nike.content }}
 			</p>
 		</div>
-
 	</div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { gsap } from "gsap";
 
 const nike = ref({
 	title: "JUST DO IT",
-	content: "Nike inspira a atletas de todo el mundo ofreciéndoles productos, experiencias y servicios innovadores",
-	video: "./videos/nike-shot.mp4"
-})
+	content:
+		"Nike inspira a atletas de todo el mundo ofreciéndoles productos, experiencias y servicios innovadores",
+	video: "./videos/nike-shot.mp4",
+});
 
+onMounted(() => {
+	gsap.fromTo(
+		".nike",
+		{
+			y: 50,
+			opacity: 0,
+		},
+		{
+			y: 0,
+			opacity: 1,
+			duration: 5,
+		},
+	);
+});
 </script>
 
 <style scoped>
@@ -48,7 +61,7 @@ const nike = ref({
 	line-height: 32px;
 	text-align: center;
 	font-weight: 500;
-	font-family: 'Futura';
+	font-family: "Futura";
 }
 
 .nike__content {
@@ -56,13 +69,13 @@ const nike = ref({
 	max-width: 100%;
 	font-size: 14px;
 	line-height: 19px;
-	font-family: 'Helvetica';
+	font-family: "Helvetica";
 }
 
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+}
 
 @media only screen and (min-width: 1024px) {
-
 	.nike {
 		display: flex;
 		justify-content: space-between;
@@ -83,18 +96,14 @@ const nike = ref({
 }
 
 @media only screen and (min-width: 1200px) {
-
 	.nike__video {
 		max-width: 750px;
-		
 	}
 }
 
 @media only screen and (min-width: 1344px) {
-
 	.nike__video {
 		max-width: 900px;
-
 	}
 
 	.nike__story-box {

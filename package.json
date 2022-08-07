@@ -8,7 +8,8 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"swiper": "^8.2.2",
+		"gsap": "^3.10.4",
+		"swiper": "^8.3.2",
 		"vue": "^3.2.25",
 		"vue-accordion": "^1.0.0"
 	},

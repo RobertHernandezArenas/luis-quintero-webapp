@@ -13,5 +13,5 @@ export default defineConfig({
 			"@": path.join(__dirname, "./src"),
 		},
 	},
-	base: "/luis-quintero-webapp",
+	base: "/",
 });

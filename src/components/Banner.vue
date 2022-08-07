@@ -1,14 +1,24 @@
 <template>
 	<div class="banner">
 		<div class="banner-container">
-			<img src="./images/luisito-villarreal.png" alt="" />
-			<img src="./images/frotamanos-luisito.png" alt="" />
+			<!-- <img src="/images/luisito-villarreal.png" alt="" /> -->
+			<div class="banner__welcome">
+				<span>BIENVENIDOS A LA </span>
+				<h2>WEB DE LUIS QUINTERO</h2>
+			</div>
+			<img :src="image.image" :alt="image.alternative_text" />
 		</div>
 	</div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+
+const image = ref({
+	image: "/images/gol-luisito-png.png",
+	alternative_text: "Luis Quintero",
+	fx: "animate__animated animate__zoomIn",
+});
 </script>
 
 <style scoped>
@@ -17,34 +27,54 @@ import { ref } from "vue";
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	height: 250px;
-	background: rgb(37, 170, 139);
-	background: linear-gradient(
-		90deg,
-		rgb(3, 78, 76) 48%,
-		rgb(173, 152, 31) 54%,
-		rgba(249, 255, 0, 1) 100%
-	);
+	height: auto;
+	background: url("/images/stadium-green2.jpeg"); /*url("/images/fx-img.png") black;*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: static;
+	/* animation-name: zoom-out;
+	animation-duration: 10s; */
+}
+
+@keyframes zoom-out {
+	from {
+		transform: matrix(2, 0, 0, 2, 0, 0);
+	}
+	to {
+		transform: matrix(1, 0, 0, 1, 0, 0);
+	}
 }
 
 .banner-container {
-	display: flex;
-	width: 300px;
 	position: relative;
+}
+.banner__welcome {
+	width: 100%;
 	height: 100%;
 }
 
-.banner-container img:first-child {
-	width: 100%;
-	height: 100%;
+.banner__welcome span {
 	position: absolute;
-	right: 30px;
+	top: 32%;
+	background: #ffe000;
+	padding: 0.5rem 2rem;
+	color: #017b75;
+	font-size: 2rem;
+	opacity: 0.8;
 }
 
-.banner-container img:nth-child(2) {
+.banner__welcome h2 {
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 30px;
+	top: 40%;
+	background: #017b75;
+	padding: 0.5rem 1rem;
+	font-size: 3rem;
+	opacity: 0.8;
+}
+
+.banner-container img {
+	height: 850px;
 }
 </style>
