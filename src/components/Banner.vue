@@ -28,12 +28,13 @@ const image = ref({
 	align-items: center;
 	width: 100vw;
 	height: auto;
-	background: url("/images/stadium-green2.jpeg"); /*url("/images/fx-img.png") black;*/
+	background: url("/images/stadium-green12.jpg"); /*url("/images/fx-img.png") black;*/
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 	position: static;
+	margin: 2rem 0;
 	/* animation-name: zoom-out;
 	animation-duration: 10s; */
 }
@@ -59,9 +60,9 @@ const image = ref({
 	position: absolute;
 	top: 32%;
 	background: #ffe000;
-	padding: 0.5rem 2rem;
+	padding: 0.5rem 3rem;
 	color: #017b75;
-	font-size: 2rem;
+	font-size: 1.3rem;
 	opacity: 0.8;
 }
 
@@ -69,12 +70,13 @@ const image = ref({
 	position: absolute;
 	top: 40%;
 	background: #017b75;
-	padding: 0.5rem 1rem;
-	font-size: 3rem;
+	padding: 0.5rem 3rem;
+	font-size: 1.3rem;
 	opacity: 0.8;
 }
 
 .banner-container img {
 	height: 850px;
+	max-height: 450px;
 }
 </style>

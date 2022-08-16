@@ -2,8 +2,9 @@
 	<ButtonUp />
 	<MenuBar />
 	<AccordionGallery />
-	<Nike />
+	<Countdown :date="end" @onFinish="finish()" />
 	<Banner />
+	<Nike />
 	<ScrollProgressBar />
 	<GridMansory />
 	<Contact />
@@ -21,17 +22,12 @@ import GridMansory from "@/components/GridMansory.vue";
 import ScrollProgressBar from "@/components/ScrollProgressBar.vue";
 import ButtonUp from "@/components/ButtonUp.vue";
 import Nike from "@/components/Nike/Nike.vue";
+import Countdown from "@/components/Countdown.vue";
 import { onMounted } from "vue";
 
-onMounted(() => {
-	const ar = [];
-	
-	for (const item of [document.styleSheets]) {
-		item
-		ar.push(item);
-	}
-	console.log(ar, document.styleSheets);
-});
+const end = new Date("2022-09-04T16:37:00");
+
+onMounted(() => {});
 </script>
 
 <style>

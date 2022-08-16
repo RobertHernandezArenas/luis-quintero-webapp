@@ -1,0 +1,153 @@
+{
+    "matches":[  {
+        "match": "Jornada 1",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-09-04",
+        "isVillarrealLocal": false,
+        "team1": "U.D Alzira 'A'",
+        "team2": "Villarreal C.F 'A'"
+    },
+    {
+        "match": "Jornada 2",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-09-11",
+        "isVillarrealLocal": true,
+        "team1": "Villarreal C.F 'A'",
+        "team2": "Atletico Madrileño C.F"
+    },
+    {
+        "match": "Jornada 3",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-09-18",
+        "isVillarrealLocal": false,
+        "team1": "Real Murcia C.F-S.A.D",
+        "team2": "Villarreal C.F 'A'"
+    },
+{
+        "match": "Jornada 4",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-10-02",
+        "isVillarrealLocal": true,
+        "team1": "Villarreal C.F 'A'",
+        "team2": "C.D Roda 'A'"
+    },
+    {
+        "match": "Jornada 5",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-10-09",
+        "isVillarrealLocal": false,
+        "team1": "C.D Toledo S.A.D",
+        "team2": "Villarreal C.F 'A'"
+    },
+    {
+        "match": "Jornada 6",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-10-16",
+        "isVillarrealLocal": true,
+        "team1": "Villarreal C.F 'A'",
+        "team2": "Albacete Balombie S.A.D"
+    },
+    {
+        "match": "Jornada 7",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-10-23",
+        "isVillarrealLocal": false,
+        "team1": "Elche C.F 'A'",
+        "team2": "Villarreal C.F 'A'"
+    },
+    {
+        "match": "Jornada 8",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-10-30",
+        "isVillarrealLocal": true,
+        "team1": "Villarreal C.F 'A'",
+        "team2": "Alboraya U.D 'A'"
+    },
+    {
+        "match": "Jornada 9",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-11-06",
+        "isVillarrealLocal": false,
+        "team1": "UCAM Universidad Catolica de Murcia C.F",
+        "team2": "Villarreal C.F 'A'"
+    },
+    {
+        "match": "Jornada 10",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-11-13",
+        "isVillarrealLocal": true,
+        "team1": "Villarreal C.F 'A'",
+        "team2": "Valencia C.F 'A'"
+    },
+    {
+        "match": "Jornada 11",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-11-20",
+        "isVillarrealLocal": false,
+        "team1": "F.C Cartagena",
+        "team2": "Villarreal C.F 'A'"
+    },
+    {
+        "match": "Jornada 12",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-11-27",
+        "isVillarrealLocal": true,
+        "team1": "Villarreal C.F 'A'",
+        "team2": "Levante U.D 'A'"
+    },
+    {
+        "match": "Jornada 13",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-12-04",
+        "isVillarrealLocal": false,
+        "team1": "C.F Inter San Jose Valencia 'A'",
+        "team2": "Villarreal C.F 'A'"
+    },
+    {
+        "match": "Jornada 14",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-12-11",
+        "isVillarrealLocal": false,
+        "team1": "Hercules C.F 'A'",
+        "team2": "Villarreal C.F 'A'"
+    },
+    {
+        "match": "Jornada 15",
+        "categoryLeague": "División de Honor Juvenil",
+        "league": "Liga-7",
+        "season": "2022-2023",
+        "date": "2022-12-18",
+        "isVillarrealLocal": true,
+        "team1": "Villarreal C.F 'A'",
+        "team2": "C.D Castellon 'A'"
+    }
+]
+}

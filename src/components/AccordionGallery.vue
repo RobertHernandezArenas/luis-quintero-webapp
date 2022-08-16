@@ -93,6 +93,7 @@ onMounted(() => {
 }
 
 .accordion__card {
+	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	width: 100%;
@@ -116,13 +117,13 @@ onMounted(() => {
 	width: 300px;
 	padding: 0rem 0.5rem 1rem 0.75rem;
 	/* Aqui determinamos las dimensiones de la imagen */
-	/* background: rgb(0, 0, 0);
+	background: rgb(0, 0, 0);
 	background: linear-gradient(
 		0deg,
-		rgba(0, 0, 0, 1) 30%,
-		rgba(9, 9, 121, 0) 60%,
+		rgba(0, 0, 0, 1) 15%,
+		rgba(9, 9, 121, 0) 45%,
 		rgba(0, 0, 0, 0) 100%
-	); */
+	);
 }
 
 .accordion__link {
@@ -164,8 +165,8 @@ h3.accordion__title {
 
 	.accordion__card {
 		display: flex;
-		filter: grayscale(85%);
-		transition: 0.65s all ease-in-out;
+		filter: grayscale(75%);
+		transition: all 0.45s ease-in-out;
 		scroll-snap-align: unset;
 		max-height: 750px;
 	}
@@ -179,7 +180,7 @@ h3.accordion__title {
 	}
 
 	.accordion:hover .accordion__card:first-child {
-		filter: grayscale(85%);
+		filter: grayscale(75%);
 	}
 
 	.accordion:hover .accordion__card:first-child:hover {
@@ -188,7 +189,7 @@ h3.accordion__title {
 
 	.accordion:hover .accordion__card {
 		width: 100%;
-		transition: all 0.85s ease-in-out;
+		transition: all 0.65s ease-in-out;
 	}
 
 	.accordion .accordion__card:hover {
@@ -196,7 +197,7 @@ h3.accordion__title {
 		filter: grayscale(0%);
 	}
 
-	.accordion .accordion__card:hover .accordion__container:hover{
+	.accordion .accordion__card:hover .accordion__container:hover {
 		background: linear-gradient(
 			0deg,
 			rgb(0, 0, 0) 15%,
@@ -229,12 +230,6 @@ h3.accordion__title {
 
 	.accordion__container {
 		width: 100%;
-		background: linear-gradient(
-			0deg,
-			rgba(0, 0, 0, 1) 8%,
-			rgba(9, 9, 121, 0) 20%,
-			rgba(0, 0, 0, 0) 100%
-		);
 	}
 
 	.accordion__image {
