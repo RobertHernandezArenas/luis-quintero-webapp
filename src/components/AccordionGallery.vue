@@ -23,6 +23,10 @@
 <script setup>
 import { ref, onMounted /*reactive, toRefs, reactive,*/, computed } from "vue";
 import BannerMaskVue from "./BannerMask.vue";
+
+var h = 12;
+console.log(h.toString().length)
+
 const articles = ref([
 	{
 		image: "/images/luisito.jpg",
@@ -32,14 +36,14 @@ const articles = ref([
 		readMore: "Seguir leyendo ➔",
 	},
 	{
-		image: "/images/lui5.jpg",
+		image: "/images/luis0.jpg",
 		url: "#",
 		title: "NIKE RENUEVA A LUIS QUINTERO.",
 		description: `La empresa multinacional nº 1 de ropa deportiva, decide renovar a Luis Quintero como su embajador y representante de su marca. `,
 		readMore: "Seguir leyendo ➔",
 	},
 	{
-		image: "/images/slide1.jpg",
+		image: "/images/luis-col0.jpg",
 		url: "#",
 		title: "Titulo Luisito H3",
 		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
@@ -59,7 +63,7 @@ const articles = ref([
 		readMore: "Seguir leyendo ➔",
 	},
 	{
-		image: "/images/luis37.jpg",
+		image: "/images/luis-col1.jpg",
 		url: "#",
 		title: "Titulo Luisito H3",
 		description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
@@ -90,6 +94,7 @@ onMounted(() => {
 	overflow: scroll;
 	background-color: black;
 	scroll-snap-type: x proximity;
+	margin: 2rem 0;
 }
 
 .accordion__card {
@@ -153,14 +158,13 @@ h3.accordion__title {
 @media only screen and (min-width: 1024px) {
 	.accordion {
 		width: 90vw;
-		margin: 0 auto;
+		margin: 72px auto 32px auto;
 		height: 80vh;
 		max-height: 750px;
 		overflow: hidden;
 		scroll-snap-type: unset;
 		gap: 16px;
 		max-width: 1920px;
-		margin-top: 72px;
 	}
 
 	.accordion__card {

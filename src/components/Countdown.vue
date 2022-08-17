@@ -84,13 +84,22 @@ export default {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin: 2rem 0;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+.countdown__match {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .countdown__match h3.countdown__next-match {
 	font-size: 1.5rem;
+	margin-right: 1rem;
 	color: yellow;
 	font-style: italic;
+	font-weight: 700;
 }
 
 .countdown__match h3.countdown__next-match span {
@@ -105,7 +114,7 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 1rem 0;
+	margin: .5rem 0;
 }
 .countdown__block {
 	display: flex;

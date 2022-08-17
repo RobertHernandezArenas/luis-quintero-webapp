@@ -32,7 +32,7 @@
 			</div>
 
 			<!-- LINKS -->
-			<ul class="menu__list">
+			<ul @click="menuFX" class="menu__list">
 				<li
 					v-for="linky in navigation"
 					:key="linky.id"
