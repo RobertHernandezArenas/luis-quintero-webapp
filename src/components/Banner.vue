@@ -1,82 +1,111 @@
 <template>
-	<div class="banner">
-		<div class="banner-container">
-			<!-- <img src="/images/luisito-villarreal.png" alt="" /> -->
-			<div class="banner__welcome">
-				<span>BIENVENIDOS A LA </span>
-				<h2>WEB DE LUIS QUINTERO</h2>
-			</div>
-			<img :src="image.image" :alt="image.alternative_text" />
+	<div class="matchcard__container">
+		<article
+		v-for="matchDay in SEASONMATCHES.matches.slice(0, 3)"
+		:key="matchDay.id"
+		class="matchcard"
+	>
+		<div class="matchcard__date">
+			<p class="day">{{ new Date(matchDay.date).getDate() }}</p>
+			<p class="month">{{ GetMonthName(matchDay.date) }}</p>
 		</div>
+		<p class="matchcard__hour"></p>
+		<p class="matchcard__matchday">{{ matchDay.match }}</p>
+		<p class="matchcard__group-league">{{ matchDay.categoryLeague }}</p>
+		<p class="matchcard__league">{{ matchDay.league }}</p>
+		<div class="matchcard__team">
+			<img :src="matchDay.team1.image" alt="" class="shield" />
+			<span class="name">{{matchDay.team1.name}}</span>
+		</div>
+		<span class="matchcard__result">
+			{{ matchDay.team1.result1 }}-{{ matchDay.team2.result2 }}
+		</span>
+		<div class="matchcard__team">
+			<img :src="matchDay.team2.image" alt="" class="shield" />
+			<span class="name">{{matchDay.team2.name}}</span>
+		</div>
+	</article>
 	</div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { onMounted, ref, computed } from "vue";
+import SEASONMATCHES from "@/assets/data/matches.json";
 
-const image = ref({
-	image: "/images/gol-luisito-png.png",
-	alternative_text: "Luis Quintero",
-	fx: "animate__animated animate__zoomIn",
+const GetMonthName = date => {
+	let months = [
+		"ENE",
+		"FEB",
+		"MAR",
+		"ABR",
+		"MAY",
+		"JUN",
+		"JUL",
+		"AGO",
+		"SEP",
+		"OCT",
+		"NOV",
+		"DIC",
+	];
+	let monthFormatted = new Date(date).getMonth();
+	let month = months.filter((month, index) => index == monthFormatted);
+	return month.toString();
+};
+
+onMounted(() => {
+	console.log(SEASONMATCHES.matches[0].team1.image);
 });
 </script>
 
 <style scoped>
-.banner {
+
+.matchcard__container {
 	display: flex;
-	justify-content: center;
+	flex-wrap: wrap;
+}
+.matchcard {
+	background: rgb(157, 157, 157, 0.25);
+	border-radius: 8px;
+	width: auto;
+	margin: 1rem auto;
+	padding: 1rem;
+	max-width: 300px;
+}
+
+.matchcard:nth-of-type(2) {
+	max-width: 85%;
+}
+
+.matchcard__date {
+	display: flex;
+	flex-direction: column;
 	align-items: center;
-	width: 100vw;
-	height: auto;
-	background: url("/images/stadium-green12.jpg"); /*url("/images/fx-img.png") black;*/
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	position: static;
-	margin: 2rem 0;
-	/* animation-name: zoom-out;
-	animation-duration: 10s; */
-}
-
-@keyframes zoom-out {
-	from {
-		transform: matrix(2, 0, 0, 2, 0, 0);
-	}
-	to {
-		transform: matrix(1, 0, 0, 1, 0, 0);
-	}
-}
-
-.banner-container {
-	position: relative;
-}
-.banner__welcome {
-	width: 100%;
-	height: 100%;
-}
-
-.banner__welcome span {
+	justify-content: center;
 	position: absolute;
-	top: 32%;
-	background: #ffe000;
-	padding: 0.5rem 3rem;
-	color: #017b75;
-	font-size: 1.3rem;
-	opacity: 0.8;
+	background: white;
+	color: black;
+	width: 50px;
+	height: 50px;
+	right: 15%;
+}
+.matchcard__team,
+.matchcard__visitorteam {
+	display: inline-block;
 }
 
-.banner__welcome h2 {
-	position: absolute;
-	top: 40%;
-	background: #017b75;
-	padding: 0.5rem 3rem;
-	font-size: 1.3rem;
-	opacity: 0.8;
+.matchcard__team{
+	display: inline-flex;
+	flex-direction: column;
 }
 
-.banner-container img {
-	height: 850px;
-	max-height: 450px;
+.matchcard__team .name{
+	text-align: center;
+}
+
+.shield {
+	/* height: 45px; */
+	width: 45px;
+	margin: 1rem auto
+	;
 }
 </style>

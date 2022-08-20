@@ -24,9 +24,6 @@
 import { ref, onMounted /*reactive, toRefs, reactive,*/, computed } from "vue";
 import BannerMaskVue from "./BannerMask.vue";
 
-var h = 12;
-console.log(h.toString().length)
-
 const articles = ref([
 	{
 		image: "/images/luisito.jpg",

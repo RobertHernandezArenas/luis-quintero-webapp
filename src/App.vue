@@ -6,10 +6,9 @@
 	<Banner />
 	<Nike />
 	<ScrollProgressBar />
-	<GridMansory />
-	<Contact />
-	<!--<Slider />
-	 -->
+	<!-- <GridMansory />
+	<Contact /> -->
+	
 </template>
 
 <script setup>
