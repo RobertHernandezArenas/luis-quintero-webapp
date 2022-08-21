@@ -134,15 +134,6 @@ const menuFX = () => {
 </script>
 
 <style scoped>
-::-webkit-scrollbar {
-	width: 10px;
-}
-::-webkit-scrollbar-track {
-	background: yellow;
-}
-::-webkit-scrollbar-thumb {
-	background: #888;
-}
 .superpos {
 	z-index: 9999;
 }

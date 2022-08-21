@@ -1,21 +1,20 @@
 <template>
 	<ButtonUp />
 	<MenuBar />
+	<ScrollProgressBar />
 	<AccordionGallery />
 	<Countdown :date="end" @onFinish="finish()" />
-	<Banner />
+	<MatchDays />
 	<Nike />
-	<ScrollProgressBar />
 	<!-- <GridMansory />
 	<Contact /> -->
-	
 </template>
 
 <script setup>
 import AccordionGallery from "@/components/AccordionGallery.vue";
 import Contact from "@/components/Contact.vue";
 import MenuBar from "@/components/MenuBar.vue";
-import Banner from "@/components/Banner.vue";
+import MatchDays from "@/components/MatchDays.vue";
 import Slider from "@/components/Slider.vue";
 import GridMansory from "@/components/GridMansory.vue";
 import ScrollProgressBar from "@/components/ScrollProgressBar.vue";
@@ -48,7 +47,7 @@ onMounted(() => {});
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	font-family: "SF Pro Display", Avenir, Helvetica, Arial, sans-serif;
+	font-family:  "Montserrat", "Segoe UI", Arial, Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: #ffffff;

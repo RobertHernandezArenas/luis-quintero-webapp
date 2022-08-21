@@ -86,6 +86,7 @@ export default {
 	justify-content: center;
 	align-items: center;
 	margin: 1rem 0;
+	height: 100px;
 }
 
 .countdown__match {

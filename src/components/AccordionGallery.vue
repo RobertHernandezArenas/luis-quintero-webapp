@@ -101,8 +101,8 @@ onMounted(() => {
 	width: 100%;
 	height: 100%;
 	scroll-snap-align: center;
-	border-bottom: 4px solid;
-	border-image: linear-gradient(to left, #ffe000, #f2ff00, #00416a) 1;
+	border-bottom: 2px solid yellow;
+	/* border-image: linear-gradient(to left, #ffe000, #f2ff00, #00416a) 1; */
 }
 
 .accordion__card:first-child {
@@ -156,7 +156,7 @@ h3.accordion__title {
 	.accordion {
 		width: 90vw;
 		margin: 72px auto 32px auto;
-		height: 80vh;
+		height: 800px;/** 80vh */
 		max-height: 750px;
 		overflow: hidden;
 		scroll-snap-type: unset;
