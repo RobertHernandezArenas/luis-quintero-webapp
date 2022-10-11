@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Madinah Authentic';
-    src: url('./MadinahAuthentic.woff2') format('woff2'),
-        url('./MadinahAuthentic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
