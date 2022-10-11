@@ -34,27 +34,15 @@ onMounted(() => {
 .progress-bar-container {
 	width: 100%;
 	position: fixed;
-	top: 0;
-	height: 7px;
-	z-index: 1001;
+	top: 72px;
+	height: 4px;
+	z-index: 98;
 }
 
 .progress-bar {
 	height: 100%;
 	width: 0;
-	background: #00416a; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to left,
-		#ffe000,
-		#f2ff00,
-		#00416a
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to left,
-		#ffe000,
-		#f2ff00,
-		#00416a
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: var(--secondaryColor);
 }
 
 @media only screen and (min-width: 1024px) {

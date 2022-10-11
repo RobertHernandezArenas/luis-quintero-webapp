@@ -2,13 +2,12 @@
 	<nav class="menu">
 		<div class="menu__margin">
 			<!-- LOGO -->
-			<div class="menu-container-logo">
-				<img
-					
+			<div  class="menu-container-logo">
+				<a href="#home"><img
 					class="menu-container-logo__image"
 					:src="logo.image"
 					:alt="logo.alternative_text"
-				/>
+				/></a>
 
 				<div class="menu-container-logo__namesite">
 					<a class="menu-container-logo__link" :href="logo.link">
@@ -67,7 +66,7 @@
 </template>
 
 <script setup>
-import { ref /*reactive, toRefs, reactive, computed*/ } from "vue";
+import { onMounted, ref /*reactive, toRefs, reactive, computed*/ } from "vue";
 /** ****************************************************************************************** */
 // REACTVE para declarar propiedades dentro de reactive tengo que abrir siempre un objeto y tener en cuenta
 // que va aa ser reactivo a todos sus niveles , es decir que va a mutar y se modificara el mismo objeto ,
@@ -100,10 +99,12 @@ const socialLogos = ref([
 ]);
 const navigation = ref([
 	{ name: "#LQ10", href: "#home" },
-	{ name: "ABOUT ME", href: "#aboutMe" },
+	{ name: "CALENDARIO", href: "#calendario" },
+	// { name: "ABOUT ME", href: "#aboutMe" },
 	{ name: "HIGHTLIGHTS", href: "#hightlights" },
 	{ name: "GALLERY", href: "#gallery" },
 	{ name: "CONTACT", href: "#contact" },
+	{ name: "SIGN IN", href: "#" },
 ]);
 const hasTitle = () => (logo.value.name.length > 0 ? true : false);
 const hasSlogan = () => (logo.value.slogan.length > 0 ? true : false);
@@ -118,8 +119,17 @@ const menuFX = () => {
 	let bar3 = document.querySelector(".menu__bar:last-child");
 	let boddy = document.querySelector("body");
 
+	// const activeLink = window.location.hash;
+	// let links = document.querySelectorAll(".menu__list--link");
+	// links.forEach(link => {
+	// 	if (link.href.includes(activeLink.toString())) {
+	// 		link.classList.add("active")
+	// 	}
+	// 	console.log(activeLink, window.location.hash);
+	// });
+
 	mobileMenuIsOpen
-		? (boddy.style.overflow = "hidden")
+		? true //(boddy.style.overflow = "hidden")
 		: barsBurger.forEach(bar => {
 				bar.style.backgroundColor = "white";
 				boddy.style.overflow = "auto";
@@ -130,21 +140,29 @@ const menuFX = () => {
 	bar2.classList.toggle("menu__bar2");
 	bar3.classList.toggle("menu__bar3");
 };
+
+let distanceToTop = () =>
+	document.documentElement.scrollTop || document.body.scrollTop;
+const toGoUp = () => {
+	if (distanceToTop() > 0 || distanceToTop() != 0) {
+		scrollTo(0, 0);
+	}
+};
+
+onMounted(() => {
+	
+});
 /** ****************************************************************************************** */
 </script>
 
 <style scoped>
-::-webkit-scrollbar {
-	width: 10px;
-}
-::-webkit-scrollbar-track {
-	background: yellow;
-}
-::-webkit-scrollbar-thumb {
-	background: #888;
-}
 .superpos {
 	z-index: 9999;
+}
+
+.active {
+	background: #ffe000;
+	color: black;
 }
 
 .menu {
@@ -271,6 +289,11 @@ const menuFX = () => {
 .menu__list--link:hover {
 	color: yellow;
 }
+
+.menu__list--link:active {
+	color: red;
+}
+
 .menu__list--link {
 	color: white;
 	text-decoration: none;
@@ -286,7 +309,7 @@ const menuFX = () => {
 	top: 100%;
 	width: 0;
 	height: 4px;
-	background: linear-gradient(to left, #FFE000, #f2ff00, #00416A);
+	background: linear-gradient(to left, #ffe000, #f2ff00, #00416a);
 	display: block;
 	content: "";
 	transition: width 0.35s ease-in-out;
@@ -348,7 +371,7 @@ const menuFX = () => {
 		display: none;
 	}
 	.menu__list {
-		/* pointer-events: none; */
+		/* pointer-events: none;  */
 		background: black;
 		position: unset;
 		transform: unset;

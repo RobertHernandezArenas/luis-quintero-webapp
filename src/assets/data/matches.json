@@ -1,257 +1,257 @@
 {
     "matches": [
         {
-            "categoryLeague": "División de Honor Juvenil",
-            "date": "2022-09-04",
+            "categoryLeague": "Div. Honor Juvenil",
+            "date": "2022-09-02",
             "league": "Grupo-7",
             "match": "Jornada 1",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/alzira.png",
-                "name": "U.D Alzira 'A'",
-                "result1": ""
+                "name": "Alzira",
+                "result1": "1"
             },
             "team2": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
-                "result2": ""
+                "name": "Villarreal",
+                "result2": "1"
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
-            "date": "2022-09-11",
-            "league": "Liga-7",
+            "categoryLeague": "Div. Honor Juvenil",
+            "date": "2022-09-11 21:58:00",
+            "league": "Grupo-7",
             "match": "Jornada 2",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
-                "result1": ""
+                "name": "Villarreal",
+                "result1": "4"
             },
             "team2": {
                 "image": "/images/teams/atleticomadrileno.png",
-                "name": "At. Madrileño C.F",
-                "result2": ""
+                "name": "At. Madrileño",
+                "result2": "0"
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
-            "date": "2022-09-18",
-            "league": "Liga-7",
+            "categoryLeague": "Div. Honor Juvenil",
+            "date": "2022-09-17",
+            "league": "Grupo-7",
             "match": "Jornada 3",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/rmurcia.png",
-                "name": "Real Murcia C.F",
-                "result1": ""
+                "name": "R. Murcia",
+                "result1": "1"
             },
             "team2": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
-                "result2": ""
+                "name": "Villarreal",
+                "result2": "0"
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-10-02",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 4",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
-                "result1": ""
+                "name": "Villarreal",
+                "result1": "3"
             },
             "team2": {
                 "image": "/images/teams/roda.png",
-                "name": "C.D Roda 'A'",
-                "result2": ""
+                "name": "Roda",
+                "result2": "0"
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-10-09",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 5",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/toledo.png",
-                "name": "C.D Toledo",
-                "result1": ""
+                "name": "Toledo",
+                "result1": "1"
             },
             "team2": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
-                "result2": ""
+                "name": "Villarreal",
+                "result2": "9"
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-10-16",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 6",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/albacete.png",
-                "name": "Albacete S.A.D",
+                "name": "Albacete",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-10-23",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 7",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/elche.png",
-                "name": "Elche C.F 'A'",
+                "name": "Elche",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-10-30",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 8",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/alboraya.png",
-                "name": "Alboraya U.D 'A'",
+                "name": "Alboraya",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-11-06",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 9",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/ucam.png",
-                "name": "UCAM C.F",
+                "name": "UCAM",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-11-13",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 10",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/valencia.png",
-                "name": "Valencia C.F 'A'",
+                "name": "Valencia",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-11-20",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 11",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/cartagena.png",
-                "name": "F.C Cartagena",
+                "name": "Cartagena",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-11-27",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 12",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/levante.png",
-                "name": "Levante U.D 'A'",
+                "name": "Levante",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-12-04",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 13",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/intersanjose.png",
-                "name": "C.F Inter San Jose 'A'",
+                "name": "Inter San Jose",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-12-11",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 14",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/hercules.png",
-                "name": "Hercules C.F 'A'",
+                "name": "Hercules",
                 "result1": ""
             },
             "team2": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result2": ""
             }
         },
         {
-            "categoryLeague": "División de Honor Juvenil",
+            "categoryLeague": "Div. Honor Juvenil",
             "date": "2022-12-18",
-            "league": "Liga-7",
+            "league": "Grupo-7",
             "match": "Jornada 15",
             "season": "2022-2023",
             "team1": {
                 "image": "/images/teams/villarreal.png",
-                "name": "Villarreal C.F 'A'",
+                "name": "Villarreal",
                 "result1": ""
             },
             "team2": {
-                "image": "/images/teams/catsellon.png",
-                "name": "C.D Castellon 'A'",
+                "image": "/images/teams/castellon.png",
+                "name": "Castellon",
                 "result2": ""
             }
         }

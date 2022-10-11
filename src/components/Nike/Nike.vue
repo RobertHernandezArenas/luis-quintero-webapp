@@ -43,6 +43,7 @@ onMounted(() => {
 .nike {
 	display: flex;
 	flex-wrap: wrap;
+	max-width: 1920px;
 }
 
 .nike__video {

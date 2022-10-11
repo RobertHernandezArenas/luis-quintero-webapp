@@ -1,5 +1,5 @@
 <template>
-	<div class="countdown__container">
+	<div id="calendario" class="countdown__container">
 		<div class="countdown__match">
 			<h3 class="countdown__next-match">PRÓXIMO <span>PARTIDO</span></h3>
 		</div>
@@ -86,6 +86,14 @@ export default {
 	justify-content: center;
 	align-items: center;
 	margin: 1rem 0;
+	height: 150px;
+	/** new feats */
+	position: fixed;
+	top: 0;
+	margin-top: 72px;
+	z-index: 1001;
+	background-color: black;
+	width: 100%;
 }
 
 .countdown__match {
@@ -97,7 +105,7 @@ export default {
 .countdown__match h3.countdown__next-match {
 	font-size: 1.5rem;
 	margin-right: 1rem;
-	color: yellow;
+	color: var(--secondaryColor);
 	font-style: italic;
 	font-weight: 700;
 }
@@ -107,7 +115,7 @@ export default {
 }
 
 .countdown .countdown__block .countdown__digit {
-	color: yellow;
+	color: var(--secondaryColor);
 }
 
 .countdown {
